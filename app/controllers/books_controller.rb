@@ -1,13 +1,25 @@
 class BooksController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:my_books]
   before_action :set_book, only: [:show, :edit, :update, :destroy]
   
   # GET /books
   # GET /books.json
   def index
-    @books = current_user.books
+    respond_to do |format|
+      if params[:term]
+        @books = Book.search_by_all(params[:term])
+      else
+        @books = Book.all
+      end
+      format.json 
+      format.html
+    end
   end
-  
+
+  def my_books
+    @my_books = current_user.books if current_user
+  end
+
   # GET /books/1
   # GET /books/1.json
   def show

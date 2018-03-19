@@ -14,4 +14,7 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
+//= require underscore
+//= require select2-full
+//= require books
 //= require_tree .

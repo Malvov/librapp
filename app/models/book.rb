@@ -15,4 +15,13 @@
 
 class Book < ApplicationRecord
     belongs_to :user
+
+    include PgSearch
+    pg_search_scope :search_by_all, against: [ :title ],
+        using: {
+            tsearch: {
+                prefix: true
+            }
+        }
+        
 end

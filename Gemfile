@@ -53,10 +53,20 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'jquery-rails'
 gem 'bootstrap-sass'
+
+#Simple form
 gem 'simple_form'
+
+#Devise
 gem 'devise'
 
 gem 'faker'
 
 # Font-Awesome
 gem 'font-awesome-rails'
+
+#pg_search
+gem 'pg_search'
+
+gem 'select2-rails'
+gem 'underscore-rails'
