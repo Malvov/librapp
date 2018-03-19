@@ -67,6 +67,3 @@ gem 'font-awesome-rails'
 
 #pg_search
 gem 'pg_search'
-
-gem 'select2-rails'
-gem 'underscore-rails'

@@ -5,14 +5,10 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    respond_to do |format|
-      if params[:term]
-        @books = Book.search_by_all(params[:term])
-      else
-        @books = Book.all
-      end
-      format.json 
-      format.html
+    if params[:term]
+      @books = Book.search_by_all(params[:term])
+    else
+      @books = Book.all
     end
   end
 
